@@ -1,3 +1,7 @@
+body {
+  margin: 20px 40px;
+}
+
 .App {
   text-align: center;
 }
@@ -22,12 +26,14 @@
 }
 
 .job {
-  display: flex;
   width: 80%;
-  justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
   margin: 20px auto;
-  padding: 20px 0;
-  align-content: center;
+  padding: 20px 10px;
+  align-items: center;
+  text-align: left;
+  /* temporary solution ^ */
   border: 2px black solid;
 }
 
