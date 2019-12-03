@@ -34,11 +34,11 @@ body {
   align-items: center;
   text-align: left;
   /* temporary solution ^ */
-  border: 2px black solid;
 }
 
 .job:hover {
   cursor: pointer;
+  color: #666666;
 }
 
 .job-company {
@@ -47,4 +47,9 @@ body {
 
 .job-dialog {
   padding: 30px 50px;
+}
+
+.detail-logo {
+  height: 30px;
+  float: right;
 }

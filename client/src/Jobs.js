@@ -6,12 +6,25 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import JobModal from './JobModal';
 
 const Jobs = ({ jobs }) => {
   const [activeStep, setActiveStep] = React.useState(0);
   const jobsNum = jobs.length;
   const numPages = Math.ceil(jobsNum / 50);
   const jobsOnPage = jobs.slice(activeStep * 50, activeStep * 50 + 50);
+
+  //modal
+  const [open, setOpen] = React.useState(false);
+  const [selectedJob, selectJob] = React.useState({});
+
+  function handleClickOpen() {
+    setOpen(true);
+  }
+  function handleClose() {
+    setOpen(false);
+  }
+
   function handleNext() {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   }
@@ -22,6 +35,7 @@ const Jobs = ({ jobs }) => {
 
   return (
     <div className="jobs">
+      <JobModal open={open} job={selectedJob} handleClose={handleClose} />
       <Typography variant="h4" component="h1">
         Entry Level Software Jobs
       </Typography>
@@ -29,7 +43,15 @@ const Jobs = ({ jobs }) => {
         Found {jobsNum} Jobs
       </Typography>
       {jobsOnPage.map((job, i) => (
-        <Job key={i} job={job} />
+        <Job
+          key={i}
+          job={job}
+          onClick={() => {
+            selectJob(job);
+            handleClickOpen();
+            console.log('clicked');
+          }}
+        />
       ))}
       <div>
         Page {activeStep + 1} of {numPages}

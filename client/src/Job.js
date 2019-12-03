@@ -2,9 +2,9 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-const Job = ({ job }) => {
+const Job = ({ job, onClick }) => {
   return (
-    <Paper className="job">
+    <Paper onClick={onClick} className="job">
       <div className="fl">
         <Typography variant="h6">{job.title}</Typography>
         <Typography variant="h5">{job.company}</Typography>
