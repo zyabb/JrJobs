@@ -8,10 +8,24 @@ const mockJobs = [
   { title: 'Can ', company: 'Google ' },
   { title: 'SWE', company: 'Google ' }
 ];
+const JOB_API_URI = 'http://localhost:3001/jobs';
+
+async function fetchJobs(callback) {
+  const res = await fetch(JOB_API_URI);
+  const json = await res.json();
+  callback(json);
+}
+
 function App() {
+  const [jobsList, updateJobs] = React.useState([]);
+
+  React.useEffect(() => {
+    fetchJobs(updateJobs);
+  }, []);
+
   return (
     <div className="App">
-      <Jobs jobs={mockJobs} />
+      <Jobs jobs={jobsList} />
     </div>
   );
 }

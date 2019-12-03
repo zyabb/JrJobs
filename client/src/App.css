@@ -24,7 +24,21 @@
 .job {
   display: flex;
   width: 80%;
-  margin: 0 auto;
   justify-content: space-around;
-  padding: 10px 0;
+  margin: 20px auto;
+  padding: 20px 0;
+  align-content: center;
+  border: 2px black solid;
+}
+
+.job:hover {
+  cursor: pointer;
+}
+
+.job-company {
+  padding: 0 30px;
+}
+
+.job-dialog {
+  padding: 30px 50px;
 }

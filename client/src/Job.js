@@ -1,10 +1,10 @@
 import React from 'react';
-
+import Paper from '@material-ui/core/Paper';
 const Job = ({ job }) => {
   return (
-    <div className="job">
+    <Paper className="job">
       {job.title} {job.company}
-    </div>
+    </Paper>
   );
 };
 
