@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3001"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

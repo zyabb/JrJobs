@@ -8,7 +8,7 @@ const mockJobs = [
   { title: 'Can ', company: 'Google ' },
   { title: 'SWE', company: 'Google ' }
 ];
-const JOB_API_URI = 'http://localhost:3001/jobs';
+const JOB_API_URI = '/api/jobs';
 
 async function fetchJobs(callback) {
   const res = await fetch(JOB_API_URI);
